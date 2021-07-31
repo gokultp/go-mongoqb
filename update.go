@@ -27,12 +27,14 @@ func (u *UpdateMap) Inc(field string, value int) *UpdateMap {
 	return u
 }
 
-func (u *UpdateMap) SetFields(updateObj interface{}) {
+func (u *UpdateMap) SetFields(updateObj interface{}) *UpdateMap {
 	u.set = updateObj
+	return u
 }
 
-func (u *UpdateMap) IncFields(updateObj interface{}) {
+func (u *UpdateMap) IncFields(updateObj interface{}) *UpdateMap {
 	u.inc = updateObj
+	return u
 }
 
 func (u *UpdateMap) BuildUpdate() (bson.M, error) {
