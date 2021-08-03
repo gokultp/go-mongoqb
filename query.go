@@ -112,7 +112,7 @@ func (q *QueryBuilder) Not(queries ...IQuery) *QueryBuilder {
 
 // Make sure text index is created for the fields to be queried
 // eg: db.articles.createIndex( { subject: "text" , author: "text" } )
-func (q *QueryBuilder) SearchFields(value string) *QueryBuilder {
+func (q *QueryBuilder) Search(value string) *QueryBuilder {
 	q.queries = append(q.queries, NewSearchQuery(value))
 	return q
 }
